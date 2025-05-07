@@ -1,0 +1,174 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 220 70% 50%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 220 70% 90%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 220 70% 50%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 220 40% 2%;
+    --foreground: 0 0% 98%;
+    --card: 220 40% 3%;
+    --card-foreground: 0 0% 98%;
+    --popover: 220 40% 3%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 220 70% 50%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 220 40% 10%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 220 40% 10%;
+    --muted-foreground: 220 20% 70%;
+    --accent: 220 40% 15%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 220 40% 10%;
+    --input: 220 40% 10%;
+    --ring: 220 70% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient 5s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.tech-icon {
+  @apply flex flex-col items-center justify-center p-4 rounded-lg transition-all duration-300;
+}
+
+.tech-icon:hover {
+  @apply scale-110 bg-accent/20;
+}
+
+/* Fiber optic light beam effect */
+.light-beam {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(66, 153, 225, 0.6), transparent);
+  animation: light-pulse 3s infinite;
+  opacity: 0.6;
+  border-radius: 100%;
+  z-index: -1;
+}
+
+@keyframes light-pulse {
+  0% {
+    opacity: 0.2;
+    box-shadow: 0 0 5px rgba(66, 153, 225, 0.3);
+  }
+  50% {
+    opacity: 0.6;
+    box-shadow: 0 0 20px rgba(66, 153, 225, 0.7), 0 0 40px rgba(66, 153, 225, 0.5);
+  }
+  100% {
+    opacity: 0.2;
+    box-shadow: 0 0 5px rgba(66, 153, 225, 0.3);
+  }
+}
+
+/* Fiber optic background */
+.fiber-background {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image: radial-gradient(circle at 20% 30%, rgba(66, 153, 225, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(124, 58, 237, 0.15) 0%, transparent 50%);
+  opacity: 0.8;
+}
+
+.fiber-glow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(66, 153, 225, 0.2) 0%,
+    rgba(66, 153, 225, 0.1) 25%,
+    transparent 70%
+  );
+  z-index: -1;
+  opacity: 0.5;
+  animation: glow 8s infinite alternate;
+}
+
+@keyframes glow {
+  0% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 0.7;
+  }
+}
+
+/* Light refraction effect */
+.light-refraction {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, transparent 0%, rgba(66, 153, 225, 0.05) 50%, transparent 100%);
+  z-index: -1;
+  transform: skewY(-12deg);
+  transform-origin: top left;
+}
+
+/* Optical wave pattern */
+.optical-wave {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 20px,
+    rgba(66, 153, 225, 0.03) 20px,
+    rgba(66, 153, 225, 0.03) 40px
+  );
+  z-index: -1;
+  opacity: 0.5;
+}
