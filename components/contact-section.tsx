@@ -27,15 +27,18 @@ export function ContactSection() {
     e.preventDefault()
     
     // Create mailto URL with form data
-    const mailtoUrl = `mailto:kameniwinny@ieee.org?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(
-      `Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`
-    )}`
+    const subject = encodeURIComponent(formData.subject || 'Message from Portfolio')
+    const body = encodeURIComponent(
+      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+    )
     
-    // Open email client
-    window.location.href = mailtoUrl
+    // Open email client with form data
+    window.location.href = `mailto:kameniwinny@ieee.org?subject=${subject}&body=${body}`
     
-    // Reset form
-    setFormData({ name: "", email: "", subject: "", message: "" })
+    // Reset form after a short delay to ensure the email client opens
+    setTimeout(() => {
+      setFormData({ name: "", email: "", subject: "", message: "" })
+    }, 100)
   }
 
   return (
@@ -173,14 +176,9 @@ export function ContactSection() {
                       required
                     />
                   </div>
-                  <a
-  href="mailto:kameniwinny@ieee.org?subject=Message%20from%20Portfolio&body=Hello%2C%20I%20would%20like%20to%20connect%20with%20you."
-  className="w-full"
->
                   <Button type="submit" className="w-full bg-blue-600 hover:bg-blue-700">
                     Send Message
                   </Button>
-                  </a>
                 </form>
               </CardContent>
             </Card>
