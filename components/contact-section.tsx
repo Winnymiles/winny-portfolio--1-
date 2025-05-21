@@ -25,12 +25,17 @@ export function ContactSection() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    // In a real application, you would handle form submission here
-    console.log("Form submitted:", formData)
+    
+    // Create mailto URL with form data
+    const mailtoUrl = `mailto:kameniwinny@ieee.org?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(
+      `Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`
+    )}`
+    
+    // Open email client
+    window.location.href = mailtoUrl
+    
     // Reset form
     setFormData({ name: "", email: "", subject: "", message: "" })
-    // Show success message
-    alert("Message sent successfully!")
   }
 
   return (
