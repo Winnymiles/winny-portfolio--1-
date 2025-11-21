@@ -8,7 +8,7 @@ import { motion } from "framer-motion"
 
 export function HeroSection() {
   const [typedText, setTypedText] = useState("")
-  const fullText = "Photonics & Information Technology Student"
+  const fullText = "Medical Device R&D Assistant | (Jr)Biomedical Signal Processing Engineer"
   const typingSpeed = 100
 
   useEffect(() => {
@@ -62,8 +62,13 @@ export function HeroSection() {
             transition={{ duration: 0.5, delay: 0.4 }}
             className="text-muted-foreground max-w-xl mx-auto md:mx-0"
           >
-            4th year student specializing in optical systems, fiber grating research, and photonic device development with hands-on
-            experience in signal processing and optical prototyping.
+       I design and optimize <strong>optical, sensing, and biomedical signal-processing systems</strong>
+            that solve real engineering problems. My work bridges <strong>digital signal processing</strong>,
+            <strong> free-space optical communication</strong>, and <strong>AI-enabled health technologies</strong>,
+            focusing on reliability, interpretability, and real-time performance.
+            <br /><br />
+            I believe engineers shouldn’t just answer questions — they should ask the ones that move
+            innovation forward.
           </motion.p>
 
           <motion.div
