@@ -34,19 +34,19 @@ export function AboutSection() {
             viewport={{ once: true }}
             className="space-y-6"
           >
-            <p>
-              Dynamic 4th-year Bachelor of Information Technology student specializing in Optical Systems & Sensors with
-              2+ years of hands-on research in photonics, fiber optics, and optical prototyping.
+             <p>
+              I'm a multidisciplinary engineer specializing in <strong>optical systems, biomedical signal processing, and sensing technologies</strong>. My background spans free-space optical communication at the National Research Council (NRC), ECG/PPG signal processing at Carleton University, and embedded, sensor-driven systems.
             </p>
             <p>
-              I have a proven track record in experimental design for optical systems, statistical analysis of fiber
-              optic data, and ISO-style documentation. Currently, I'm working as a Research Assistant at Carleton
-              University, collaborating on fiber grating research and optical innovation.
+              Across all my work, I focus on <strong>identifying the right engineering questions</strong>:
             </p>
+            <ul className="list-disc list-inside space-y-2 ml-4">
+              <li>How do we improve optical link reliability in unpredictable environments?</li>
+              <li>What signal-processing methods extract the most information with the least noise?</li>
+              <li>How do we design sensing systems that are robust, explainable, and clinically meaningful?</li>
+            </ul>
             <p>
-              My passion lies in the intersection of photonics and technology, where I develop solutions for real-world
-              problems using light-based technologies. I'm particularly interested in fiber optic communications,
-              optical sensing, and photonic integrated circuits.
+              I enjoy bridging <strong>research, prototyping, and system validation</strong>, ensuring that algorithms, hardware, and documentation align with real-world requirements. My goal is to contribute to teams advancing <strong>medical devices, optical communication, and intelligent sensing systems</strong>.
             </p>
           </motion.div>
 
