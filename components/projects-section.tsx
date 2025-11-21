@@ -90,17 +90,12 @@ export function ProjectsSection() {
   const regularProjects = projects.filter((p) => !p.featured)
 
   return (
-    <section id="projects" className="py-16 md:py-24 relative">
-      <div className="fiber-background"></div>
-      <div className="light-refraction"></div>
-      <div className="optical-wave"></div>
-
-      {/* Light beams */}
-      <div className="light-beam" style={{ top: "15%", transform: "rotate(2deg)" }}></div>
-      <div className="light-beam" style={{ top: "45%", transform: "rotate(-3deg)" }}></div>
-      <div className="light-beam" style={{ top: "75%", transform: "rotate(1deg)" }}></div>
+   // <section id="projects" className="py-16 md:py-24 relative">
+   <section id="projects" className="py-20 scroll-mt-24">
 
       <div className="container mx-auto px-4 relative z-10">
+
+        {/* Title */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -112,6 +107,7 @@ export function ProjectsSection() {
           <div className="w-20 h-1 bg-primary mx-auto rounded-full"></div>
         </motion.div>
 
+        {/* Featured Project */}
         {featuredProject && (
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -122,7 +118,7 @@ export function ProjectsSection() {
           >
             <div className="flex flex-col md:flex-row gap-8 items-center">
               <div className="w-full md:w-1/2">
-                <Badge className="mb-4 bg-blue-500/10 text-blue-500 dark:text-blue-400 border-blue-500/30">
+                <Badge className="mb-4 bg-blue-500/10 text-blue-500 border-blue-500/30">
                   Featured Project
                 </Badge>
                 <h3 className="text-2xl font-bold mb-2">{featuredProject.title}</h3>
@@ -132,29 +128,14 @@ export function ProjectsSection() {
                     <Badge
                       key={i}
                       variant="secondary"
-                      className="bg-blue-500/10 text-blue-500 dark:text-blue-400 border-blue-500/30"
+                      className="bg-blue-500/10 text-blue-500 border-blue-500/30"
                     >
                       {tag}
                     </Badge>
                   ))}
                 </div>
-                <div className="flex gap-4">
-                  {featuredProject.demoLink && (
-                    <Button asChild className="bg-blue-600 hover:bg-blue-700">
-                      <Link href={featuredProject.demoLink} target="_blank" rel="noopener noreferrer">
-                        View Demo <ArrowUpRight className="ml-2 h-4 w-4" />
-                      </Link>
-                    </Button>
-                  )}
-                  {featuredProject.githubLink && (
-                    <Button variant="outline" asChild>
-                      <Link href={featuredProject.githubLink} target="_blank" rel="noopener noreferrer">
-                        GitHub <Github className="ml-2 h-4 w-4" />
-                      </Link>
-                    </Button>
-                  )}
-                </div>
               </div>
+
               <div className="w-full md:w-1/2 rounded-lg overflow-hidden shadow-lg">
                 <img
                   src={featuredProject.image || "/placeholder.svg"}
@@ -166,61 +147,74 @@ export function ProjectsSection() {
           </motion.div>
         )}
 
+        {/* Project Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {regularProjects.map((project, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
+        {regularProjects.map((project, index) => (
+  <motion.div
+    key={index}
+    initial={{ opacity: 0, y: 30 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.5, delay: index * 0.1 }}
+    viewport={{ once: true }}
+    className="relative"
+  >
+
+    {/* Parallax Glow */}
+    <motion.div
+      className="absolute -inset-0.5 rounded-xl bg-blue-500/20 blur-xl opacity-0 group-hover:opacity-40 transition duration-500 pointer-events-none"
+      animate={{
+        x: [0, 10, -10, 0],
+        y: [0, -10, 10, 0],
+      }}
+      transition={{
+        repeat: Infinity,
+        duration: 8,
+        ease: "easeInOut",
+      }}
+    />
+
+    {/* Card */}
+    <motion.div
+      whileHover={{ y: -6 }}
+      transition={{ type: "spring", stiffness: 200, damping: 15 }}
+      className="group rounded-xl border border-blue-500/30 bg-card/80 backdrop-blur shadow-md hover:shadow-blue-400/30 hover:shadow-xl transition-shadow duration-300 overflow-hidden relative"
+    >
+
+      {/* IMAGE */}
+      <div className="h-48 overflow-hidden">
+        <motion.img
+          src={project.image}
+          alt={project.title}
+          className="w-full h-full object-cover"
+          whileHover={{ scale: 1.05 }}
+          transition={{ duration: 0.4 }}
+        />
+      </div>
+
+      {/* TEXT */}
+      <div className="p-5">
+        <h3 className="font-semibold text-lg mb-2">{project.title}</h3>
+        <p className="text-muted-foreground text-sm mb-4">
+          {project.description}
+        </p>
+
+        <div className="flex flex-wrap gap-2">
+          {project.tags.map((tag, i) => (
+            <span
+              key={i}
+              className="text-xs px-2 py-1 rounded bg-blue-500/10 text-blue-500 border border-blue-500/30"
             >
-              <Card className="h-full flex flex-col backdrop-blur-sm bg-card/80 border-blue-500/20">
-                <div className="h-48 overflow-hidden">
-                  <img
-                    src={project.image || "/placeholder.svg"}
-                    alt={project.title}
-                    className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
-                  />
-                </div>
-                <CardHeader>
-                  <CardTitle>{project.title}</CardTitle>
-                  <CardDescription>{project.description}</CardDescription>
-                </CardHeader>
-                <CardContent className="flex-grow">
-                  <div className="flex flex-wrap gap-2">
-                    {project.tags.map((tag, i) => (
-                      <Badge
-                        key={i}
-                        variant="secondary"
-                        className="bg-blue-500/10 text-blue-500 dark:text-blue-400 border-blue-500/30"
-                      >
-                        {tag}
-                      </Badge>
-                    ))}
-                  </div>
-                </CardContent>
-                <CardFooter className="flex gap-4">
-                  {project.demoLink && (
-                    <Button size="sm" asChild className="bg-blue-600 hover:bg-blue-700">
-                      <Link href={project.demoLink} target="_blank" rel="noopener noreferrer">
-                        Demo <ArrowUpRight className="ml-2 h-3 w-3" />
-                      </Link>
-                    </Button>
-                  )}
-                  {project.githubLink && (
-                    <Button size="sm" variant="outline" asChild>
-                      <Link href={project.githubLink} target="_blank" rel="noopener noreferrer">
-                        Code <Github className="ml-2 h-3 w-3" />
-                      </Link>
-                    </Button>
-                  )}
-                </CardFooter>
-              </Card>
-            </motion.div>
+              {tag}
+            </span>
           ))}
         </div>
-         </div>
+      </div>
+
+    </motion.div>
+  </motion.div>
+))}
+
+        </div>
 
         {/* OTHER PROJECTS LIST */}
         <div className="mt-16">
@@ -232,6 +226,7 @@ export function ProjectsSection() {
             <li>• <b>Sensor-Integrated Microcontroller Prototypes:</b> Built multi-sensor embedded prototypes for biomedical and environmental monitoring.</li>
           </ul>
         </div>
+
       </div>
     </section>
   )
