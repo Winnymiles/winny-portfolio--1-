@@ -18,56 +18,71 @@ interface Project {
 }
 
 export function ProjectsSection() {
+
   const projects: Project[] = [
     {
-      title: "Early Detection of Cardiovascular Diseases Using AI",
+      title: "Smart House + Digital Twin Simulator",
       description:
-        "Utilized machine-learning algorithms on ECG and physiological data to enable real-time arrhythmia detection and early diagnosis of cardiovascular conditions.",
-      image: "/project1.jpg?height=400&width=600",
-      tags: ["Python", "TensorFlow/Keras", "signal processing", "data analysis", "hypothesis testing"],
+        "Built a bi-directional cyber-physical smart home system with a 3D-printed multi-room model controlled by an ESP32 and a virtual digital-twin dashboard. Achieved real-time synchronization between sensors, actuators, and an interactive app.",
+      image: "/Smart-House.png",
+      tags: ["IoT", "Embedded Systems", "Digital Twin", "ESP32", "Wireless Control"],
+    },
+    {
+      title: "Free-Space Optical Link Reliability Optimization",
+      description:
+        "Investigated reliability and performance limits of free-space optical (FSO) communication systems under atmospheric turbulence. Modeled optical channels, evaluated link budgets, analyzed scintillation effects, and developed DSP-based calibration strategies to improve signal stability over long-range air pathways.",
+      image: "/fso-research.jpg",
+      tags: [
+        "Optical Communication",
+        "FSO",
+        "Atmospheric Optics",
+        "Link Budget Modeling",
+        "DSP",
+        "R&D",
+      ],
+    },
+    {
+      title: "Bio-Adaptive Bunion Realigner (Futuristic Concept)",
+      description:
+        "A visionary biomedical concept device using micro-skeletal pulse therapy, self-conforming nanosilk mesh, adaptive kinetic guidance, and bio-inductive patches to stimulate natural bone and soft-tissue remodeling.",
+      image: "/Bunion-corrector.png",
+      tags: ["Biomedical Engineering", "Regenerative Tech", "Smart Materials", "Biomechanics"],
       featured: true,
     },
     {
+      title: "Early Detection of Cardiovascular Diseases Using AI",
+      description:
+        "Developed a full cardiovascular risk detection pipeline combining ECG signal processing and machine-learning models. Implemented Wiener and wavelet filtering, engineered CNN/LSTM-based classifiers, and validated classification accuracy using clinical-style evaluation metrics. Optimized the pipeline for low-latency, real-time inference in wearable applications.",
+      image: "/project1.jpg",
+      tags: [
+        "Biomedical AI",
+        "ECG",
+        "DSP",
+        "Machine Learning",
+        "Signal Processing",
+      ],
+    },
+    
+    {
       title: "Fiber Bragg Grating Sensor System",
       description:
-        "Developed a fiber Bragg grating sensor system for strain and temperature measurements with high precision and real-time monitoring capabilities.",
-      image: "/project2.jpg?height=400&width=600",
-      tags: ["Fiber Optics", "Sensors", "Data Analysis", "Photonics"],
-    },
-    {
-      title: "Hand Gesture Recognition System",
-      description:
-        "Built a vision-based CNN classifier in Python that achieves 95 % accuracy on live video feeds for intuitive human–computer interaction via hand movements.",
-      image: "/hand-gesture.png?height=400&width=600",
-      tags: ["Python", "OpenCV", "TensorFlow", "convolutional neural networks", "real-time video processing"],
-    },
-    {
-      title: "Arduino Memory Game",
-      description:
-        "Developed an interactive pattern-matching game on Arduino Uno using LEDs and buttons; programmed randomized sequences and user-input validation to challenge short-term memory.",
-      image: "/project4.jpg?height=400&width=600",
-      tags: ["Arduino (C/C++)", "embedded systems", "hardware prototyping","user interface design"],
+        "Designed a strain- and temperature-sensing FBG system with high-precision spectral interrogation and real-time data acquisition for photonic measurements.",
+      image: "/project2.jpg",
+      tags: ["Fiber Optics", "Sensors", "Photonics", "Optical Engineering"],
     },
     {
       title: "3D-Printed Aspheric Lenses",
       description:
-        "Designed custom aspheric lens profiles in Zemax, fabricated them via high-resolution 3D printing, and performed efficiency/aberration measurements to verify optical performance.",
-      image: "/3d.png?height=400&width=600",
-      tags: ["Zemax", "3D Printing", "Optical Design", "Lens Design/Fabrication"],
+        "Created custom aspheric lens designs in Zemax, fabricated prototypes using high-resolution 3D printing, and performed optical efficiency and aberration analysis.",
+      image: "/3d.png",
+      tags: ["Zemax", "Optical Design", "3D Printing", "Lens Fabrication"],
     },
     {
-      title: "Fiber Y-Coupler Characterization",
+      title: "ECG Denoising & Biomedical DSP",
       description:
-        "Fusion-spliced and characterized fiber Y-couplers with detailed performance analysis and documentation.",
-      image: "/y-coupler.png?height=400&width=600",
-      tags: ["Fiber Splicing", "Optical Measurements", "Photonics"],
-    },
-    {
-      title: "ECG Denoising",
-      description:
-        "Implemented Wiener and wavelet-based digital filters to clean raw ECG signals, boosting SNR and achieving 97 % arrhythmia detection accuracy; validated improvements via statistical hypothesis testing.",
-      image: "/project7.png?height=400&width=600",
-      tags: ["MATLAB/Python", "DSP algorithms", "wavelet analysis", "statistical analysis"],
+        "Implemented Wiener and wavelet-based filtering pipelines to clean raw ECG signals, achieving high SNR improvements and reliable arrhythmia detection through statistical validation.",
+      image: "/project7.png",
+      tags: ["DSP", "ECG", "Signal Processing", "MATLAB", "Biomedical AI"],
     },
   ]
 
@@ -204,6 +219,18 @@ export function ProjectsSection() {
               </Card>
             </motion.div>
           ))}
+        </div>
+         </div>
+
+        {/* OTHER PROJECTS LIST */}
+        <div className="mt-16">
+          <h3 className="text-2xl font-semibold mb-4">Other Technical Projects (Selected)</h3>
+          <ul className="space-y-3 text-muted-foreground">
+            <li>• <b>Real-Time Gesture Tracking (Edge AI Prototype):</b> Implemented a lightweight, OpenCV-based hand-pose classifier optimized for low-latency edge processing.</li>
+            <li>• <b>Embedded State-Machine Controller (Arduino, C/C++):</b> Designed a deterministic finite-state interaction controller using debouncing, interrupts, and modular firmware design.</li>
+            <li>• <b>Optical Component Handling & Micro-Assembly:</b> Fiber preparation, connector polishing, and micron-scale alignment for optical testbeds.</li>
+            <li>• <b>Sensor-Integrated Microcontroller Prototypes:</b> Built multi-sensor embedded prototypes for biomedical and environmental monitoring.</li>
+          </ul>
         </div>
       </div>
     </section>
