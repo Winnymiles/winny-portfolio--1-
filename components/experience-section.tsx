@@ -13,30 +13,45 @@ interface Experience {
 }
 
 export function ExperienceSection() {
-  const experiences: Experience[] = [
+ const experiences: Experience[] = [
     {
-      title: "Research Assistant",
-      company: "Carleton University",
+      title: "Research Student, Free-Space Optical Communication Systems",
+      company: "National Research Council Canada (NRC)",
       location: "Ottawa, Canada",
-      period: "09/2024 – Present",
+      period: "Sept 2025 – Present",
       description: [
-        "Collaborating with Dr. Sima Soltanpour on ECG denoising using various filtering techniques and digital signal processing (DSP).",
-        "Applied Wiener and wavelet filters to raw ECG data; quantified SNR improvements via hypothesis testing.",
-        "Developing AI algorithms for early cardiovascular-disease detection, achieving significant classification accuracy.",
-        "Designing wearable sensor-integration prototypes for real-time ECG acquisition and on-device inference.",
-        "Documented requirement traceability and quality metrics aligned with medical-device verification standards.",
+        "Working on next-generation free-space optical (FSO) communication systems designed to extend high-speed connectivity to rural and remote regions.",
+        "Solving core engineering challenges: How do we maintain reliable optical links under real atmospheric turbulence? What alignment strategies and optical models ensure stable performance over long distances? How can DSP algorithms optimize calibration and compensate for environmental variation in real time?",
+        "Modeled transmitter/receiver alignment and atmospheric attenuation to optimize system reliability.",
+        "Ran real-time tests under variable conditions, evaluating system performance and link stability.",
+        "Developed DSP-based calibration methods for improving signal quality across environmental fluctuations.",
+        "Assisted in designing experimental setups combining optics, electronics, and embedded systems.",
+        "Deepening specialization in optical communication, photonics R&D, and robust DSP for challenging environments.",
       ],
     },
     {
-      title: "Research Assistant",
+      title: "Research Assistant, Biomedical Signal Processing",
+      company: "Carleton University",
+      location: "Ottawa, Canada",
+      period: "09/2024 – 10/2025",
+      description: [
+        "Designing DSP and machine-learning pipelines that answer a central question: How can we extract clinically actionable insights from noisy physiological signals — in real time?",
+        "Developed ECG denoising using Wiener + wavelet filtering; quantified SNR improvements using statistical analysis.",
+        "Built AI models for cardiovascular-disease detection and validated classification accuracy on real-world data.",
+        "Integrated wearable ECG sensors with microcontrollers, enabling onboard inference and latency-efficient acquisition.",
+        "Reduced preprocessing time while increasing robustness to motion artifacts, improving end-to-end signal reliability.",
+      ],
+    },
+    {
+      title: "Research Assistant, Fiber Grating Research",
       company: "Carleton Optical Innovation Lab",
       location: "Ottawa, Canada",
       period: "09/2024 – 04/2025",
       description: [
-        "Conducting fiber grating research under the supervision of Dr. Christopher Smelser.",
-        "Engineered and validated experimental setups for optical systems and fiber Bragg gratings.",
-        "Executed rigorous debugging and testing for both hardware and software components in photonic systems.",
-        "Authored technical reports, abstracts, and poster presentations on fiber optic research for internal review and conferences.",
+        "Conducting fiber grating research under Dr. Christopher Smelser, focusing on a key question: How do we design and validate fiber Bragg gratings that meet precise optical specifications while ensuring experimental reproducibility?",
+        "Engineered and validated experimental setups for optical systems and fiber Bragg gratings, ensuring measurement accuracy and system reliability.",
+        "Executed rigorous debugging and testing for both hardware and software components in photonic systems, identifying and resolving critical performance bottlenecks.",
+        "Authored technical reports, abstracts, and poster presentations on fiber optic research, contributing to knowledge transfer and conference dissemination.",
       ],
     },
     {
@@ -45,11 +60,11 @@ export function ExperienceSection() {
       location: "Ottawa, Canada",
       period: "07/2023 – 05/2024",
       description: [
-        "Delivered expert technical support for a diverse range of telecommunication equipment, including fiber equipment and satellite-connected devices.",
-        "Diagnosed and resolved complex technical issues related to fiber optics and satellite communication systems.",
-        "Ensured seamless connectivity and optimized performance for telecommunication infrastructure.",
-        "Collaborated with interdisciplinary teams to provide prompt and effective technical solutions.",
-        "Offered exceptional customer support by maintaining clear and efficient communication with clients to achieve complete issue resolution.",
+        "Delivered expert technical support addressing a critical challenge: How do we diagnose and resolve complex telecommunication issues across diverse technologies (fiber optics, satellite) while minimizing downtime and ensuring reliable connectivity?",
+        "Diagnosed and resolved complex technical issues related to fiber optics and satellite communication systems, reducing average resolution time through systematic troubleshooting approaches.",
+        "Ensured seamless connectivity and optimized performance for telecommunication infrastructure, improving network reliability and customer satisfaction metrics.",
+        "Collaborated with interdisciplinary teams to provide prompt and effective technical solutions, streamlining cross-functional problem-solving processes.",
+        "Maintained clear and efficient communication with clients, achieving high customer satisfaction rates and complete issue resolution.",
       ],
     },
     {
@@ -58,9 +73,10 @@ export function ExperienceSection() {
       location: "Ottawa, Canada",
       period: "08/2022 – 04/2023",
       description: [
-        "Diagnosed and resolved technical issues efficiently for fiber optic network systems.",
-        "Conducted device reboots and configurations to restore functionality.",
-        "Maintained network performance and ensured the reliability of fiber optic cables.",
+        "Supported fiber optic network systems, addressing the core question: How do we quickly diagnose and resolve network issues while maintaining service reliability and minimizing customer impact?",
+        "Diagnosed and resolved technical issues efficiently for fiber optic network systems, implementing systematic troubleshooting protocols to reduce resolution time.",
+        "Conducted device reboots and configurations to restore functionality, ensuring rapid service restoration and minimal downtime.",
+        "Maintained network performance and ensured the reliability of fiber optic cables, contributing to improved network uptime and customer satisfaction.",
       ],
     },
   ]
