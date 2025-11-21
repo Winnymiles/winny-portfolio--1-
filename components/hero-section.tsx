@@ -67,7 +67,7 @@ export function HeroSection() {
             <strong> free-space optical communication</strong>, and <strong>AI-enabled health technologies</strong>,
             focusing on reliability, interpretability, and real-time performance.
             <br /><br />
-            I believe engineers shouldn’t just answer questions — they should ask the ones that move
+            I believe engineers shouldn’t just answer questions, they should ask the ones that move
             innovation forward.
           </motion.p>
 
@@ -83,7 +83,7 @@ export function HeroSection() {
               </Link>
             </Button>
             <Button variant="outline" asChild>
-              <Link href="/Winny's Resume.pdf" download>
+              <Link href="/winny-kameni-cv.pdf" download>
                 Resume <Download className="ml-2 h-4 w-4" />
               </Link>
             </Button>
