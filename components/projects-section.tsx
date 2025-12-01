@@ -20,17 +20,11 @@ interface Project {
 export function ProjectsSection() {
 
   const projects: Project[] = [
-    {
-      title: "Smart House + Digital Twin Simulator",
-      description:
-        "Built a bi-directional cyber-physical smart home system with a 3D-printed multi-room model controlled by an ESP32 and a virtual digital-twin dashboard. Achieved real-time synchronization between sensors, actuators, and an interactive app.",
-      image: "/Smart-House.png",
-      tags: ["IoT", "Embedded Systems", "Digital Twin", "ESP32", "Wireless Control"],
-    },
+   
     {
       title: "Free-Space Optical Link Reliability Optimization",
       description:
-        "Investigated reliability and performance limits of free-space optical (FSO) communication systems under atmospheric turbulence. Modeled optical channels, evaluated link budgets, analyzed scintillation effects, and developed DSP-based calibration strategies to improve signal stability over long-range air pathways.",
+        "Investigated performance limits of free-space optical (FSO) communication systems under atmospheric turbulence. Developed optical channel models, evaluated beam scintillation, quantified link margins, and built DSP-based compensation strategies to stabilize received power under varying conditions.",
       image: "/fso-research.jpg",
       tags: [
         "Optical Communication",
@@ -40,14 +34,27 @@ export function ProjectsSection() {
         "DSP",
         "R&D",
       ],
+      featured: true,
     },
     {
-      title: "Bio-Adaptive Bunion Realigner (Futuristic Concept)",
+      title: "Fiber Bragg Grating Sensor System",
       description:
-        "A visionary biomedical concept device using micro-skeletal pulse therapy, self-conforming nanosilk mesh, adaptive kinetic guidance, and bio-inductive patches to stimulate natural bone and soft-tissue remodeling.",
-      image: "/Bunion-corrector.png",
-      tags: ["Biomedical Engineering", "Regenerative Tech", "Smart Materials", "Biomechanics"],
-      featured: true,
+        "Designed a high-precision FBG sensing system including spectral interrogation, optical filtering, and real-time signal acquisition. Validated strain and temperature responses through calibrated optical measurements and environmental variation tests.",
+      image: "/project2.jpg",
+      tags: ["Fiber Optics", "Sensors", "Photonics", "Optical Engineering"],
+    },
+    {
+      title: "3D-Printed Aspheric Lenses",
+      description:
+        "Created and optimized custom aspheric lens geometries in Zemax, fabricated prototypes via high-resolution 3D printing, and characterized optical efficiency, aberration profiles, and alignment sensitivities.",
+      image: "/3d.png",
+      tags: ["Zemax", "Optical Design", "3D Printing", "Lens Fabrication"],
+    }, {
+      title: "Smart House + Digital Twin Simulator",
+      description:
+        "Built a bi-directional cyber-physical smart home system with a 3D-printed multi-room model controlled by an ESP32 and a virtual digital-twin dashboard. Achieved real-time synchronization between sensors, actuators, and an interactive app.",
+      image: "/Smart-House.png",
+      tags: ["IoT", "Embedded Systems", "Digital Twin", "ESP32", "Wireless Control"],
     },
     {
       title: "Early Detection of Cardiovascular Diseases Using AI",
@@ -61,21 +68,6 @@ export function ProjectsSection() {
         "Machine Learning",
         "Signal Processing",
       ],
-    },
-    
-    {
-      title: "Fiber Bragg Grating Sensor System",
-      description:
-        "Designed a strain- and temperature-sensing FBG system with high-precision spectral interrogation and real-time data acquisition for photonic measurements.",
-      image: "/project2.jpg",
-      tags: ["Fiber Optics", "Sensors", "Photonics", "Optical Engineering"],
-    },
-    {
-      title: "3D-Printed Aspheric Lenses",
-      description:
-        "Created custom aspheric lens designs in Zemax, fabricated prototypes using high-resolution 3D printing, and performed optical efficiency and aberration analysis.",
-      image: "/3d.png",
-      tags: ["Zemax", "Optical Design", "3D Printing", "Lens Fabrication"],
     },
     {
       title: "ECG Denoising & Biomedical DSP",

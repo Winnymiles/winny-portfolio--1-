@@ -48,10 +48,10 @@ export function ExperienceSection() {
       location: "Ottawa, Canada",
       period: "09/2024 – 04/2025",
       description: [
-        "Conducting fiber grating research under Dr. Christopher Smelser, focusing on a key question: How do we design and validate fiber Bragg gratings that meet precise optical specifications while ensuring experimental reproducibility?",
-        "Engineered and validated experimental setups for optical systems and fiber Bragg gratings, ensuring measurement accuracy and system reliability.",
-        "Executed rigorous debugging and testing for both hardware and software components in photonic systems, identifying and resolving critical performance bottlenecks.",
-        "Authored technical reports, abstracts, and poster presentations on fiber optic research, contributing to knowledge transfer and conference dissemination.",
+        "Designed, handled, and characterized fiber Bragg gratings (FBGs) for strain and temperature sensing applications.",
+        "Built and optimized optical measurement setups involving interrogation units, precision stages, spectral analyzers, and tunable light sources.",
+        "Performed micron-scale alignment, coupling optimization, and interferometric measurements for photonic system evaluation.",
+        "Authored technical documentation and poster presentations supporting photonics research dissemination.",
       ],
     },
     {

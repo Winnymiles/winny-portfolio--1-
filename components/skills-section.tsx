@@ -4,15 +4,18 @@ import type React from "react"
 
 import { motion } from "framer-motion"
 import { Card, CardContent } from "@/components/ui/card"
-import { Code2, Cpu, FileCode2, Gauge, LayoutGrid, Terminal, Zap, Radio, Microscope, Cable, Wrench, Box, Package, Layers } from "lucide-react"
+import {
+  Code2, Cpu, FileCode2, Gauge, LayoutGrid, Terminal, Zap, Radio, Microscope, Cable, Wrench,
+  Box, Package, Layers, CircleDot, GitBranch, Ruler, Circle, CircuitBoard
+} from "lucide-react"
 
 interface Skill {
   name: string
   icon: React.ReactNode
 }
 
-
 export function SkillsSection() {
+  // ---------------- Programming ----------------
   const programmingSkills: Skill[] = [
     { name: "Python", icon: <Code2 className="h-8 w-8 text-blue-500" /> },
     { name: "C++", icon: <FileCode2 className="h-8 w-8 text-green-500" /> },
@@ -22,35 +25,52 @@ export function SkillsSection() {
     { name: "LabVIEW", icon: <LayoutGrid className="h-8 w-8 text-blue-500" /> },
   ]
 
+  // ---------------- Optical & Photonics Engineering ----------------
   const opticalSkills: Skill[] = [
-    { name: "Atmospheric Optics", icon: <Radio className="h-8 w-8 text-blue-400" /> },
+    { name: "Optical Alignment", icon: <Ruler className="h-8 w-8 text-sky-400" /> },
     { name: "FSO Link Modeling", icon: <Zap className="h-8 w-8 text-indigo-400" /> },
-    { name: "Optical Channel Modeling", icon: <Microscope className="h-8 w-8 text-purple-400" /> },
-    { name: "Link Budgets & Power Margins", icon: <Gauge className="h-8 w-8 text-teal-400" /> },
-    { name: "Beam Alignment & Pointing", icon: <Cable className="h-8 w-8 text-green-400" /> },
-    { name: "Turbulence Modeling", icon: <Wrench className="h-8 w-8 text-blue-400" /> },
+    { name: "Atmospheric Optics", icon: <Radio className="h-8 w-8 text-blue-400" /> },
+    { name: "Interferometry", icon: <Circle className="h-8 w-8 text-purple-400" /> },
+    { name: "Fiber Bragg Gratings (FBGs)", icon: <Cable className="h-8 w-8 text-green-400" /> },
+    { name: "Optical Channel Modeling", icon: <Microscope className="h-8 w-8 text-pink-400" /> },
   ]
 
+  // ---------------- Silicon Photonics & Integrated Optics ----------------
+  const siliconPhotonicsSkills: Skill[] = [
+    { name: "Silicon Photonics (PICs)", icon: <CircuitBoard className="h-8 w-8 text-teal-400" /> },
+    { name: "Integrated Waveguides", icon: <GitBranch className="h-8 w-8 text-cyan-400" /> },
+    { name: "Photonic Device Testing", icon: <Gauge className="h-8 w-8 text-emerald-400" /> },
+    { name: "Grating Couplers", icon: <CircleDot className="h-8 w-8 text-fuchsia-400" /> },
+    { name: "Optical Packaging", icon: <Package className="h-8 w-8 text-orange-400" /> },
+    { name: "OpticStudio / Zemax", icon: <Microscope className="h-8 w-8 text-purple-500" /> },
+  ]
+
+  // ---------------- CAD & Manufacturing ----------------
   const cadManufacturingSkills: Skill[] = [
     { name: "Fusion 360", icon: <Box className="h-8 w-8 text-blue-500" /> },
     { name: "3D Printing", icon: <Package className="h-8 w-8 text-green-500" /> },
-    { name: "Molding", icon: <Layers className="h-8 w-8 text-orange-500" /> },
+    { name: "Lens Fabrication", icon: <Layers className="h-8 w-8 text-orange-500" /> },
+  ]
+
+  // ---------------- Other Technical Skills ----------------
+  const otherSkills = [
+    "Optical Measurements",
+    "Optical Testing & Validation",
+    "DSP-Based Calibration (FSO)",
+    "Wavelet / Wiener Filtering",
+    "Fiber Splicing & Micro-Handling",
+    "Wearable Sensor Pipelines",
+    "ECG/PPG Analysis",
   ]
 
   return (
-   // <section id="skills" className="py-16 md:py-24 relative">
-   <section id="skills" className="py-20 scroll-mt-24">
-
+    <section id="skills" className="py-20 scroll-mt-24">
       <div className="fiber-background"></div>
       <div className="light-refraction"></div>
       <div className="optical-wave"></div>
 
-      {/* Light beams */}
-      <div className="light-beam" style={{ top: "20%", transform: "rotate(-2deg)" }}></div>
-      <div className="light-beam" style={{ top: "50%", transform: "rotate(3deg)" }}></div>
-      <div className="light-beam" style={{ top: "80%", transform: "rotate(-1deg)" }}></div>
-
       <div className="container mx-auto px-4 relative z-10">
+        {/* Title */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -62,92 +82,23 @@ export function SkillsSection() {
           <div className="w-20 h-1 bg-primary mx-auto rounded-full"></div>
         </motion.div>
 
+        {/* Skill Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-          >
-            <Card className="backdrop-blur-sm bg-card/80 border-blue-500/30">
-              <CardContent className="p-6">
-                <h3 className="text-xl font-semibold mb-6 text-center">Programming Languages</h3>
-                <div className="grid grid-cols-2 sm:grid-cols-3 gap-6">
-                  {programmingSkills.map((skill, index) => (
-                    <motion.div
-                      key={index}
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.3, delay: index * 0.1 }}
-                      viewport={{ once: true }}
-                      className="tech-icon"
-                    >
-                      {skill.icon}
-                      <span className="mt-2 text-sm font-medium">{skill.name}</span>
-                    </motion.div>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-          </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-          >
-            <Card className="backdrop-blur-sm bg-card/80 border-blue-500/30">
-              <CardContent className="p-6">
-                <h3 className="text-xl font-semibold mb-6 text-center">Optical & Photonics</h3>
-                <div className="grid grid-cols-2 sm:grid-cols-3 gap-6">
-                  {opticalSkills.map((skill, index) => (
-                    <motion.div
-                      key={index}
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.3, delay: index * 0.1 }}
-                      viewport={{ once: true }}
-                      className="tech-icon"
-                    >
-                      {skill.icon}
-                      <span className="mt-2 text-sm font-medium">{skill.name}</span>
-                    </motion.div>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-          </motion.div>
+          {/* Programming */}
+          <SkillCard title="Programming Languages" items={programmingSkills} />
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            viewport={{ once: true }}
-          >
-            <Card className="backdrop-blur-sm bg-card/80 border-blue-500/30">
-              <CardContent className="p-6">
-                <h3 className="text-xl font-semibold mb-6 text-center">CAD & Manufacturing</h3>
-                <div className="grid grid-cols-2 sm:grid-cols-3 gap-6">
-                  {cadManufacturingSkills.map((skill, index) => (
-                    <motion.div
-                      key={index}
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.3, delay: index * 0.1 }}
-                      viewport={{ once: true }}
-                      className="tech-icon"
-                    >
-                      {skill.icon}
-                      <span className="mt-2 text-sm font-medium">{skill.name}</span>
-                    </motion.div>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-          </motion.div>
+          {/* Optical & Photonics */}
+          <SkillCard title="Optical & Photonics Engineering" items={opticalSkills} />
+
+          {/* Silicon Photonics */}
+          <SkillCard title="Silicon Photonics & Integrated Optics" items={siliconPhotonicsSkills} />
+
+          {/* CAD & Manufacturing */}
+          <SkillCard title="CAD & Manufacturing" items={cadManufacturingSkills} />
         </div>
 
+        {/* Other Skills */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -159,30 +110,11 @@ export function SkillsSection() {
             <CardContent className="p-6">
               <h3 className="text-xl font-semibold mb-6 text-center">Other Skills</h3>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div className="bg-blue-500/10 rounded-lg p-4 text-center">
-                  <span className="font-medium">DSP-Based Calibration (FSO)</span>
-                </div>
-                <div className="bg-blue-500/10 rounded-lg p-4 text-center">
-                  <span className="font-medium">ECG/PPG Analysis</span>
-                </div>
-                <div className="bg-blue-500/10 rounded-lg p-4 text-center">
-                  <span className="font-medium">Wearable Sensor Pipelines</span>
-                </div>
-                <div className="bg-blue-500/10 rounded-lg p-4 text-center">
-                  <span className="font-medium">Optical Measurements</span>
-                </div>
-                <div className="bg-blue-500/10 rounded-lg p-4 text-center">
-                  <span className="font-medium">Fiber Splicing</span>
-                </div>
-                <div className="bg-blue-500/10 rounded-lg p-4 text-center">
-                  <span className="font-medium">Wavelet / Wiener Filtering</span>
-                </div>
-                <div className="bg-blue-500/10 rounded-lg p-4 text-center">
-                  <span className="font-medium">Interferometry</span>
-                </div>
-                <div className="bg-blue-500/10 rounded-lg p-4 text-center">
-                  <span className="font-medium">Optical Testing & Validation</span>
-                </div>
+                {otherSkills.map((skill, i) => (
+                  <div key={i} className="bg-blue-500/10 rounded-lg p-4 text-center">
+                    <span className="font-medium">{skill}</span>
+                  </div>
+                ))}
               </div>
             </CardContent>
           </Card>
@@ -191,3 +123,29 @@ export function SkillsSection() {
     </section>
   )
 }
+
+// ---- Helper Component ----
+const SkillCard = ({ title, items }: { title: string; items: Skill[] }) => (
+  <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true }}>
+    <Card className="backdrop-blur-sm bg-card/80 border-blue-500/30">
+      <CardContent className="p-6">
+        <h3 className="text-xl font-semibold mb-6 text-center">{title}</h3>
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-6">
+          {items.map((skill, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3, delay: index * 0.1 }}
+              viewport={{ once: true }}
+              className="tech-icon"
+            >
+              {skill.icon}
+              <span className="mt-2 text-sm font-medium">{skill.name}</span>
+            </motion.div>
+          ))}
+        </div>
+      </CardContent>
+    </Card>
+  </motion.div>
+)

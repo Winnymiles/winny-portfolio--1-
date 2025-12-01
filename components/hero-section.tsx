@@ -8,7 +8,7 @@ import { motion } from "framer-motion"
 
 export function HeroSection() {
   const [typedText, setTypedText] = useState("")
-  const fullText = "Medical Device R&D Assistant | (Jr)Biomedical Signal Processing Engineer"
+  const fullText = "Optical & Photonic Systems Engineer | (Jr)Silicon Photonics Engineer | Free-Space Optical Communication"
   const typingSpeed = 100
 
   useEffect(() => {
@@ -62,13 +62,13 @@ export function HeroSection() {
             transition={{ duration: 0.5, delay: 0.4 }}
             className="text-muted-foreground max-w-xl mx-auto md:mx-0"
           >
-       I design and optimize <strong>optical, sensing, and biomedical signal-processing systems</strong>
-            that solve real engineering problems. My work bridges <strong>digital signal processing</strong>,
-            <strong> free-space optical communication</strong>, and <strong>AI-enabled health technologies</strong>,
-            focusing on reliability, interpretability, and real-time performance.
+       I design, model, and validate high-performance optical and photonic systems—from 
+       free-space optical links to fiber Bragg gratings and sensor-integrated photonic architectures.
+        My work bridges <strong>optical engineering, atmospheric optics, DSP-based calibration, and physics-driven system design.</strong>
             <br /><br />
-            I believe engineers shouldn’t just answer questions, they should ask the ones that move
-            innovation forward.
+            I'm driven by a core question:
+            <strong>How do we engineer optical systems that remain stable, interpretable, 
+            and reliable even under real-world conditions?</strong>      
           </motion.p>
 
           <motion.div

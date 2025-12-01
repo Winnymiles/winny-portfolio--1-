@@ -35,18 +35,20 @@ export function AboutSection() {
             className="space-y-6"
           >
              <p>
-              I'm a multidisciplinary engineer specializing in <strong>optical systems, biomedical signal processing, and sensing technologies</strong>. My background spans free-space optical communication at the National Research Council (NRC), ECG/PPG signal processing at Carleton University, and embedded, sensor-driven systems.
-            </p>
+             I'm an optical and photonic systems engineer specializing in free-space communication, fiber optic sensing, 
+             optical modeling, and physics informed signal processing.My background spans FSO communication research at the National Research Council (NRC), 
+             fiber Bragg grating development, optical alignment and testing, and embedded optical sensing systems </p>
             <p>
-              Across all my work, I focus on <strong>identifying the right engineering questions</strong>:
+              Across all my work, I focus on <strong>engineering questions that move photonics forward:</strong>:
             </p>
             <ul className="list-disc list-inside space-y-2 ml-4">
-              <li>How do we improve optical link reliability in unpredictable environments?</li>
-              <li>What signal-processing methods extract the most information with the least noise?</li>
-              <li>How do we design sensing systems that are robust, explainable, and clinically meaningful?</li>
+              <li>How do we design optical links that remain stable under turbulence, vibration, and environmental drift?</li>
+              <li>How can DSP and optical modeling improve channel performance and calibration?</li>
+              <li>What design and fabrication strategies improve the reliability of photonic components such as FBGs and custom optical elements?</li>
             </ul>
             <p>
-              I enjoy bridging <strong>research, prototyping, and system validation</strong>, ensuring that algorithms, hardware, and documentation align with real-world requirements. My goal is to contribute to teams advancing <strong>medical devices, optical communication, and intelligent sensing systems</strong>.
+              I enjoy bridging <strong>simulation, hands-on optical experimentation, and system validation</strong>, 
+              ensuring that photonic designs, measurements, and signal-processing algorithms align with real-world operational constraints.
             </p>
           </motion.div>
 
