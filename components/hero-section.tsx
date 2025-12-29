@@ -68,7 +68,7 @@ export function HeroSection() {
             <br /><br />
             I'm driven by a core question:
             <strong>How do we engineer optical systems that remain stable, interpretable, 
-            and reliable even under real-world conditions?</strong>      
+            and reliable even under real-world conditions.</strong>      
           </motion.p>
 
           <motion.div
