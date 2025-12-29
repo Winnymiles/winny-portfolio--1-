@@ -67,8 +67,8 @@ export function HeroSection() {
         My work bridges <strong>optical engineering, atmospheric optics, DSP-based calibration, and physics-driven system design.</strong>
             <br /><br />
             I'm driven by a core question:
-            <strong>How do we engineer optical systems that remain stable, interpretable, 
-            and reliable even under real-world conditions.</strong>      
+            <strong> How do we engineer optical systems that remain stable, interpretable, 
+            and reliable even under real-world conditions? </strong>      
           </motion.p>
 
           <motion.div
