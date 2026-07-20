@@ -3,70 +3,74 @@
 import { motion } from "framer-motion"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { ExternalLink, Github } from "lucide-react"
+import {
+  ExternalLink,
+  Github,
+  CircuitBoard,
+  Aperture,
+  HomeIcon,
+  HeartPulse,
+  Activity,
+  Hand,
+} from "lucide-react"
 import Link from "next/link"
+import type { LucideIcon } from "lucide-react"
 
 interface Project {
   title: string
-  description: string
-  image: string
+  summary: string
+  icon: LucideIcon
   tags: string[]
   demoLink?: string
   githubLink?: string
-  featured?: boolean
 }
 
 const projects: Project[] = [
   {
-    title: "Free-Space Optical Link Reliability Optimization",
-    description:
-      "Investigated performance limits of free-space optical (FSO) communication systems under atmospheric turbulence. Developed optical channel models, evaluated beam scintillation, quantified link margins, and built DSP-based compensation strategies to stabilize received power under variable conditions.",
-    image: "/fso-research.jpg",
-    tags: ["Optical Communication", "FSO", "Atmospheric Optics", "Link Budget", "DSP", "R&D"],
-    demoLink: "https://fso-system-free-space-optical-commu.vercel.app/",
-    featured: true,
-  },
-  {
     title: "Fiber Bragg Grating Sensor System",
-    description:
-      "Designed a high-precision FBG sensing system including spectral interrogation, optical filtering, and real-time signal acquisition. Validated strain and temperature responses through calibrated optical measurements and environmental variation tests.",
-    image: "/project2.jpg",
-    tags: ["Fiber Optics", "Sensors", "Photonics", "Optical Engineering"],
+    summary:
+      "High-precision FBG sensor with spectral interrogation, optical filtering, and real-time acquisition. Validated strain and temperature response against calibrated references.",
+    icon: CircuitBoard,
+    tags: ["Fiber Optics", "Sensors", "Photonics"],
   },
   {
-    title: "3D-Printed Aspheric Lenses",
-    description:
-      "Created and optimized custom aspheric lens geometries in Zemax OpticStudio, fabricated prototypes via high-resolution 3D printing, and characterized optical efficiency, aberration profiles, and alignment sensitivities.",
-    image: "/3d.png",
-    tags: ["Zemax", "Optical Design", "3D Printing", "Lens Fabrication"],
+    title: "3D-Printed Aspheric Lens Prototypes",
+    summary:
+      "Custom aspheric geometries designed in Zemax OpticStudio, fabricated via high-resolution 3D printing. Characterized efficiency, aberrations, and coupling sensitivity vs. simulation.",
+    icon: Aperture,
+    tags: ["Zemax", "Optical Design", "3D Printing"],
   },
   {
-    title: "Smart House + Digital Twin Simulator",
-    description:
-      "Built a bi-directional cyber-physical smart home system with a 3D-printed multi-room model controlled by an ESP32 and a virtual digital-twin dashboard. Achieved real-time synchronization between sensors, actuators, and an interactive app.",
-    image: "/Smart-House.png",
-    tags: ["IoT", "Embedded Systems", "Digital Twin", "ESP32"],
+    title: "Smart House + Digital Twin",
+    summary:
+      "Bi-directional cyber-physical smart-home model. ESP32 firmware synchronizes a 3D-printed multi-room prototype with an interactive digital-twin dashboard in real time.",
+    icon: HomeIcon,
+    tags: ["IoT", "ESP32", "Embedded", "Digital Twin"],
   },
   {
-    title: "Early Detection of Cardiovascular Diseases Using AI",
-    description:
-      "Full cardiovascular risk detection pipeline combining ECG signal processing and machine-learning models. Wiener and wavelet filtering, CNN/LSTM classifiers, and low-latency inference for wearable applications.",
-    image: "/project1.jpg",
-    tags: ["Biomedical AI", "ECG", "DSP", "Machine Learning"],
+    title: "ECG-Based Cardiovascular Detection",
+    summary:
+      "Full risk-detection pipeline combining ECG signal processing with CNN/LSTM classifiers. Optimized for low-latency inference on wearable microcontrollers.",
+    icon: HeartPulse,
+    tags: ["Biomedical AI", "ECG", "ML"],
   },
   {
     title: "ECG Denoising & Biomedical DSP",
-    description:
-      "Wiener and wavelet-based filtering pipelines to clean raw ECG signals, achieving high SNR improvements and reliable arrhythmia detection through statistical validation.",
-    image: "/project7.png",
-    tags: ["DSP", "ECG", "MATLAB", "Signal Processing"],
+    summary:
+      "Wiener + wavelet filtering pipelines that clean raw ECG signals, producing measurable SNR gains and reliable arrhythmia detection under motion artifacts.",
+    icon: Activity,
+    tags: ["DSP", "MATLAB", "Signal Processing"],
+  },
+  {
+    title: "Real-Time Gesture Tracking",
+    summary:
+      "Lightweight OpenCV-based hand-pose classifier optimized for low-latency edge inference — a prototype for embedded human-machine interaction.",
+    icon: Hand,
+    tags: ["Computer Vision", "Edge AI", "OpenCV"],
   },
 ]
 
 export function ProjectsSection() {
-  const featured = projects.find((p) => p.featured)
-  const rest = projects.filter((p) => !p.featured)
-
   return (
     <section id="projects" className="py-20 md:py-28 relative scroll-mt-24">
       <div className="container mx-auto px-4 relative z-10 max-w-6xl">
@@ -78,90 +82,60 @@ export function ProjectsSection() {
           className="text-center mb-14"
         >
           <p className="text-sm tracking-[0.25em] uppercase text-primary mb-3">Projects</p>
-          <h2 className="font-display text-3xl md:text-5xl font-semibold">Selected Work</h2>
+          <h2 className="font-display text-3xl md:text-5xl font-semibold">
+            Engineering &amp; Build Work
+          </h2>
+          <p className="text-sm text-muted-foreground mt-4 max-w-xl mx-auto">
+            Applied builds outside the research lab — hardware, embedded systems, and software
+            tools.
+          </p>
           <div className="w-16 h-[2px] bg-primary mx-auto rounded-full mt-6" />
         </motion.div>
 
-        {featured && (
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-            className="mb-14 card-elevated rounded-2xl overflow-hidden grid grid-cols-1 md:grid-cols-2"
-          >
-            <div className="h-64 md:h-auto overflow-hidden bg-secondary">
-              <img
-                src={featured.image}
-                alt={featured.title}
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="p-8 flex flex-col justify-center">
-              <Badge className="mb-4 w-fit bg-primary/10 text-primary border-primary/30">
-                Featured Project
-              </Badge>
-              <h3 className="font-display text-2xl font-semibold mb-3">{featured.title}</h3>
-              <p className="text-muted-foreground mb-5">{featured.description}</p>
-              <div className="flex flex-wrap gap-2 mb-6">
-                {featured.tags.map((t) => (
-                  <Badge
-                    key={t}
-                    variant="outline"
-                    className="bg-primary/5 text-foreground/85 border-primary/25 text-xs"
-                  >
-                    {t}
-                  </Badge>
-                ))}
-              </div>
-              <div className="flex flex-wrap gap-3">
-                {featured.demoLink && (
-                  <Button
-                    asChild
-                    className="bg-primary hover:bg-primary/90 text-primary-foreground"
-                  >
-                    <Link href={featured.demoLink} target="_blank" rel="noopener noreferrer">
-                      <ExternalLink className="mr-2 h-4 w-4" /> Live Demo
-                    </Link>
-                  </Button>
-                )}
-                {featured.githubLink && (
-                  <Button asChild variant="outline" className="border-primary/40">
-                    <Link href={featured.githubLink} target="_blank" rel="noopener noreferrer">
-                      <Github className="mr-2 h-4 w-4" /> Source
-                    </Link>
-                  </Button>
-                )}
-              </div>
-            </div>
-          </motion.div>
-        )}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+          {projects.map((project, i) => {
+            const Icon = project.icon
+            return (
+              <motion.article
+                key={project.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: i * 0.05 }}
+                viewport={{ once: true }}
+                className="card-elevated rounded-2xl p-6 flex flex-col"
+              >
+                <div className="flex items-start justify-between gap-4 mb-4">
+                  <div className="rounded-xl bg-primary/10 p-3 text-primary">
+                    <Icon className="h-5 w-5" />
+                  </div>
+                  {(project.demoLink || project.githubLink) && (
+                    <div className="flex gap-1">
+                      {project.githubLink && (
+                        <Button asChild size="icon" variant="ghost" className="h-8 w-8 text-muted-foreground hover:text-primary">
+                          <Link href={project.githubLink} target="_blank" rel="noopener noreferrer">
+                            <Github className="h-4 w-4" />
+                            <span className="sr-only">Source</span>
+                          </Link>
+                        </Button>
+                      )}
+                      {project.demoLink && (
+                        <Button asChild size="icon" variant="ghost" className="h-8 w-8 text-muted-foreground hover:text-primary">
+                          <Link href={project.demoLink} target="_blank" rel="noopener noreferrer">
+                            <ExternalLink className="h-4 w-4" />
+                            <span className="sr-only">Demo</span>
+                          </Link>
+                        </Button>
+                      )}
+                    </div>
+                  )}
+                </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {rest.map((project, i) => (
-            <motion.article
-              key={project.title}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: i * 0.06 }}
-              viewport={{ once: true }}
-              className="card-elevated rounded-2xl overflow-hidden flex flex-col"
-            >
-              <div className="h-44 overflow-hidden bg-secondary">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-                />
-              </div>
-              <div className="p-6 flex flex-col flex-1">
                 <h3 className="font-display text-lg font-semibold mb-2 leading-snug">
                   {project.title}
                 </h3>
-                <p className="text-sm text-muted-foreground mb-4 flex-1">
-                  {project.description}
-                </p>
-                <div className="flex flex-wrap gap-1.5 mb-4">
+                <p className="text-sm text-muted-foreground mb-5 flex-1">{project.summary}</p>
+
+                <div className="flex flex-wrap gap-1.5">
                   {project.tags.map((t) => (
                     <Badge
                       key={t}
@@ -172,28 +146,24 @@ export function ProjectsSection() {
                     </Badge>
                   ))}
                 </div>
-                {(project.demoLink || project.githubLink) && (
-                  <div className="flex gap-2">
-                    {project.demoLink && (
-                      <Button asChild size="sm" variant="ghost" className="text-primary">
-                        <Link href={project.demoLink} target="_blank" rel="noopener noreferrer">
-                          <ExternalLink className="mr-1.5 h-3.5 w-3.5" /> Demo
-                        </Link>
-                      </Button>
-                    )}
-                    {project.githubLink && (
-                      <Button asChild size="sm" variant="ghost" className="text-primary">
-                        <Link href={project.githubLink} target="_blank" rel="noopener noreferrer">
-                          <Github className="mr-1.5 h-3.5 w-3.5" /> Code
-                        </Link>
-                      </Button>
-                    )}
-                  </div>
-                )}
-              </div>
-            </motion.article>
-          ))}
+              </motion.article>
+            )
+          })}
         </div>
+
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          viewport={{ once: true }}
+          className="text-center text-sm text-muted-foreground mt-10"
+        >
+          Looking for research work? See{" "}
+          <Link href="#research" className="text-primary hover:underline">
+            Research Highlights
+          </Link>{" "}
+          above.
+        </motion.p>
       </div>
     </section>
   )

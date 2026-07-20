@@ -119,7 +119,7 @@ export function HeroSection() {
               </Link>
             </Button>
             <Button variant="ghost" size="icon" asChild>
-              <Link href="mailto:kameniwinny@gmail.com">
+              <Link href="mailto:kameniwinny@ieee.org">
                 <Mail className="h-5 w-5" />
                 <span className="sr-only">Email</span>
               </Link>

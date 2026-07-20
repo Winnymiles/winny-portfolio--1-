@@ -7,7 +7,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
-import { Mail, MapPin, Phone, Linkedin, Github, Download } from "lucide-react"
+import { Mail, MapPin, Linkedin, Github, Download } from "lucide-react"
 import Link from "next/link"
 
 export function ContactSection() {
@@ -29,7 +29,7 @@ export function ContactSection() {
     const body = encodeURIComponent(
       `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`,
     )
-    window.location.href = `mailto:kameniwinny@gmail.com?subject=${subject}&body=${body}`
+    window.location.href = `mailto:kameniwinny@ieee.org?subject=${subject}&body=${body}`
     setTimeout(() => {
       setFormData({ name: "", email: "", subject: "", message: "" })
     }, 100)
@@ -69,14 +69,8 @@ export function ContactSection() {
                 <ContactRow
                   icon={<Mail className="h-5 w-5 text-primary" />}
                   label="Email"
-                  value="kameniwinny@gmail.com"
-                  href="mailto:kameniwinny@gmail.com"
-                />
-                <ContactRow
-                  icon={<Phone className="h-5 w-5 text-primary" />}
-                  label="Phone"
-                  value="+1 581-309-7960"
-                  href="tel:+15813097960"
+                  value="kameniwinny@ieee.org"
+                  href="mailto:kameniwinny@ieee.org"
                 />
                 <ContactRow
                   icon={<MapPin className="h-5 w-5 text-primary" />}
