@@ -73,7 +73,7 @@ const education = [
     school: "Technical University of Applied Sciences Würzburg-Schweinfurt (THWS)",
     location: "Schweinfurt, Germany",
     period: "2022",
-    focus: "Business & Engineering — Laser Systems, Photonics, Fiber-Optic Communications",
+    focus: "Business & Engineering — Engineering Project Management, Systems Engineering, Operations & Process Optimization, Data Analysis for Engineering, Technical Business Strategy, Cross-Functional Team Collaboration",
   },
 ]
 
