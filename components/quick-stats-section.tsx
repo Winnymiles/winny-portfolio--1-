@@ -7,7 +7,7 @@ import {
   FlaskConical,
   Trophy,
   BookOpen,
-  Terminal,
+  Languages,
 } from "lucide-react"
 
 const stats = [
@@ -37,9 +37,9 @@ const stats = [
     detail: "Free-Space Optics · Biomedical DSP",
   },
   {
-    icon: Terminal,
+    icon: Languages,
     title: "Languages",
-    detail: "Python · MATLAB · LabVIEW · C/C++",
+    detail: "English · French · German (Fluent)",
   },
 ]
 
